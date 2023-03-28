@@ -1,5 +1,5 @@
 const handlePostRequest = (req, res) => {
-  const array = req.body?.data;
+  const array = req?.body?.data;
   const response = {
     is_success: true,
     user_id: "gopal_sasmal_25032001",
@@ -8,7 +8,7 @@ const handlePostRequest = (req, res) => {
     numbers: [],
     alphabets: [],
   };
-  array.forEach((ele) => {
+  array?.forEach((ele) => {
     if (isNaN(ele)) {
       response.alphabets.push(ele);
     } else {
