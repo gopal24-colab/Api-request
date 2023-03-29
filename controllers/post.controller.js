@@ -10,11 +10,11 @@ const handlePostRequest = (req, res) => {
     alphabets: [],
   };
   array?.forEach((ele) => {
-    if (isNaN(ele)) {
+    ele = parseInt(ele);
+    if (!ele) {
       response.alphabets.push(ele.toUpperCase());
     } else {
-      let num = parseInt(ele);
-      if (num % 2 == 0) {
+      if (ele % 2 == 0) {
         response.even_numbers.push(ele);
       } else {
         response.odd_numbers.push(ele);
