@@ -11,7 +11,7 @@ const handlePostRequest = (req, res) => {
   };
   array?.forEach((ele) => {
     if (isNaN(ele)) {
-      response.alphabets.push(ele);
+      response.alphabets.push(ele.toUpperCase());
     } else {
       let num = parseInt(ele);
       if (num % 2 == 0) {
