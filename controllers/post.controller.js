@@ -9,18 +9,17 @@ const handlePostRequest = (req, res) => {
     even_numbers: [],
     alphabets: [],
   };
-  array?.forEach((ele) => {
-    ele = parseInt(ele);
-    if (!ele) {
-      response.alphabets.push(ele.toUpperCase());
-    } else {
-      if (ele % 2 == 0) {
-        response.even_numbers.push(ele);
-      } else {
-        response.odd_numbers.push(ele);
-      }
+  array?.forEach((item) => {
+    let num = parseInt(item);
+    if (num) {
+      if(num%2==0)
+        responseObj.even_numbers.push(num);
+      else
+        responseObj.odd_numbers.push(num);
     }
+    else responseObj.alphabets.push(item.toUpperCase());
   });
+  res.json(responseObj)
 
   res.status(200).json(response);
 };
