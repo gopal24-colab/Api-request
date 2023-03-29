@@ -5,14 +5,20 @@ const handlePostRequest = (req, res) => {
     user_id: "gopal_sasmal_25032001",
     email: "gopal1152.be20@chitkarauniversity.edu.in",
     roll_number: 2011981152,
-    numbers: [],
+    odd_numbers: [],
+    even_numbers: [],
     alphabets: [],
   };
   array?.forEach((ele) => {
     if (isNaN(ele)) {
       response.alphabets.push(ele);
     } else {
-      response.numbers.push(ele);
+      let num = parseInt(ele);
+      if (num % 2 == 0) {
+        response.even_numbers.push(ele);
+      } else {
+        response.odd_numbers.push(ele);
+      }
     }
   });
 
